@@ -1,7 +1,10 @@
 import '@/style/globals.css'
 
-import NextTopLoader from 'nextjs-toploader'
-import type { ReactNode } from 'react'
+import { Head } from '@/component/head'
+import { ThemeProvider } from '@/provider/theme/theme-provider'
+
+import { Navbar } from '@/module/navbar'
+import { type ReactNode, Suspense } from 'react'
 
 type RootLayoutProps = {
 	children: ReactNode
@@ -12,7 +15,18 @@ function RootLayout(props: RootLayoutProps) {
 
 	return (
 		<html lang='en'>
-			<body>{children}</body>
+			<Head />
+			<body>
+				<ThemeProvider>
+					<Suspense>
+						<Navbar>
+							<div />
+						</Navbar>
+					</Suspense>
+
+					{children}
+				</ThemeProvider>
+			</body>
 		</html>
 	)
 }
