@@ -27,7 +27,6 @@
 		"**/*.tsx",
 		"**/*.mjs",
 		".next/types/**/*.ts",
-		"src/declaration/next-env.d.ts",
 		"src/declaration/ts-reset.d.ts"
 	]
 }
