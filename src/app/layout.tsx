@@ -12,10 +12,7 @@ function RootLayout(props: RootLayoutProps) {
 
 	return (
 		<html lang='en'>
-			<body>
-				<NextTopLoader showSpinner={false} />
-				{children}
-			</body>
+			<body>{children}</body>
 		</html>
 	)
 }
