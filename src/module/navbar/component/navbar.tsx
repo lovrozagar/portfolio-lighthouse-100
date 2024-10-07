@@ -1,7 +1,6 @@
 'use client'
 
 import { useLandscapeMode, useMobileMode } from '@/component/responsive/responsive'
-import { useIsMounted } from '@/hook/use-is-mounted'
 import { NavbarItem } from '@/module/navbar/component/navbar-item'
 import { modes } from '@/module/navbar/constant/modes'
 import { useNavbar } from '@/module/navbar/hook/use-navbar'
@@ -33,10 +32,6 @@ function Navbar(props: ChildrenProps) {
 	const horizontal = !landscape && !bottom
 
 	const { navigationRef, hidden } = useNavbar()
-
-	const isMounted = useIsMounted()
-
-	if (!isMounted) return null
 
 	return (
 		<>

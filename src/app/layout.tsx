@@ -1,9 +1,6 @@
-import '@/style/globals.css'
-
 import { Head } from '@/component/head'
-import { ThemeProvider } from '@/provider/theme/theme-provider'
+import { ModeProvider } from '@renderui/core'
 
-import { Navbar } from '@/module/navbar'
 import { type ReactNode, Suspense } from 'react'
 
 type RootLayoutProps = {
@@ -17,15 +14,9 @@ function RootLayout(props: RootLayoutProps) {
 		<html lang='en'>
 			<Head />
 			<body>
-				<ThemeProvider>
-					<Suspense>
-						<Navbar>
-							<div />
-						</Navbar>
-					</Suspense>
-
-					{children}
-				</ThemeProvider>
+				<ModeProvider enableSystem>
+					<Suspense>{children}</Suspense>
+				</ModeProvider>
 			</body>
 		</html>
 	)
