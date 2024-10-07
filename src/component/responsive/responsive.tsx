@@ -1,6 +1,6 @@
 'use client'
 
-import { useMediaQuery } from '@/hook/use-media-query'
+import { useMediaQuery } from '@renderui/core'
 
 type ResponsiveProps = {
 	children: JSX.Element
