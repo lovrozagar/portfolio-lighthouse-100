@@ -1,16 +1,17 @@
 import { isImageCached } from '@/module/illustration/utils/is-image-cached'
-import { animated } from '@react-spring/web'
-import { Box, cn } from '@renderui/core'
+import { cn } from '@renderui/core'
+import NextImage from 'next/image'
 import { type CSSProperties, useEffect, useMemo, useState } from 'react'
 
 type ProgressiveImageProps = {
 	src: string
-	placeholder: string
 	alt: string
+	placeholder: string
+	style: CSSProperties
 }
 
 function ProgressiveImage(props: ProgressiveImageProps) {
-	const { src, alt, placeholder } = props
+	const { src, alt, placeholder, style } = props
 
 	const start = useMemo(() => Date.now(), [])
 
@@ -38,18 +39,17 @@ function ProgressiveImage(props: ProgressiveImageProps) {
 	}
 
 	return (
-		<Box
-			component={animated.img}
-			src={currentSrc}
-			alt={alt}
-			style={{ '--transition-duration': Math.round((elapsed || 0) / 4) } as CSSProperties}
+		<div
+			style={{ ...style, '--transition-duration': Math.round((elapsed || 0) / 4) } as CSSProperties}
 			className={cn(
 				loading
-					? 'filter blur-[20px] transition-[filter] duration-[var(--transition-duration)]'
+					? 'relative w-[100vw] h-[100vh] filter blur-[20px] transition-[filter] duration-[var(--transition-duration)]'
 					: undefined,
 			)}
 			onLoad={handleLoad}
-		/>
+		>
+			<img src={'/image/sky.webp'} alt={alt} className='h-full w-full' />
+		</div>
 	)
 }
 

@@ -1,8 +1,8 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-	darkMode: ['class'],
-	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './app.tsx'],
+	darkMode: ['selector', '[data-theme="dark"]'],
+	content: ['./src/**/*.{js,ts,jsx,tsx}', './node_modules/@renderui/core/dist/**/*.{js,ts}'],
 	theme: {
 		extend: {
 			spacing: {

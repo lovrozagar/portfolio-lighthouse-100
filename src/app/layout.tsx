@@ -1,6 +1,10 @@
+import '@/style/globals.css'
+
 import { Head } from '@/component/head'
+import { Navbar } from '@/module/navbar'
 import { ModeProvider } from '@renderui/core'
 
+import { INTER } from '@/font'
 import { type ReactNode, Suspense } from 'react'
 
 type RootLayoutProps = {
@@ -11,11 +15,14 @@ function RootLayout(props: RootLayoutProps) {
 	const { children } = props
 
 	return (
-		<html lang='en'>
+		<html lang='en' className={INTER.className} suppressHydrationWarning>
 			<Head />
-			<body>
+			<body className='overflow-x-hidden'>
 				<ModeProvider enableSystem>
-					<Suspense>{children}</Suspense>
+					<Suspense>
+						<Navbar />
+						{children}
+					</Suspense>
 				</ModeProvider>
 			</body>
 		</html>

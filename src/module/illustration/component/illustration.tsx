@@ -2,8 +2,13 @@
 
 import { useMobileMode } from '@/component/responsive'
 import { ProgressiveImage } from '@/module/illustration/component/progressive-image'
+import {
+	DARK_SKY_STYLE_1,
+	DARK_SKY_STYLE_2,
+	GRADIENT_STYLE,
+	LIGHT_SKY_STYLE,
+} from '@/module/illustration/constant/illustration-style'
 import { TRANSITION_CONFIG } from '@/module/illustration/constant/transition-config'
-import { Box } from '@mui/joy'
 import { animated, useSpringRef, useTransition } from '@react-spring/web'
 import { useMode } from '@renderui/core'
 import { useEffect } from 'react'
@@ -30,9 +35,7 @@ function Illustration() {
 	}, [skyTransRef])
 
 	useEffect(() => {
-		document.body.style.transition = `background-color ease ${
-			TRANSITION_CONFIG.duration / 1000
-		}s, color ease ${TRANSITION_CONFIG.duration / 1000}s`
+		document.body.style.transition = 'background-color ease 0.5s, color ease 0.5s'
 
 		return () => {
 			document.body.style.transition = ''
@@ -41,50 +44,18 @@ function Illustration() {
 
 	return (
 		<Parallax speed={-20} startScroll={0} disabled={mobile}>
-			<Box
-				component='div'
-				sx={{
-					position: 'relative',
-					width: '100vw',
-					height: '100vh',
-					pointerEvents: 'none',
-					'*': {
-						transition: `background-color ${
-							TRANSITION_CONFIG.duration / 1000
-						}s ease, color ${TRANSITION_CONFIG.duration / 1000}s ease`,
-					},
-				}}
-			>
+			<div className='relative w-[100vw] h-[100vh] pointer-events-none [&_>_*]:transition-[background-color] [&_>_*]:duration-500 [&_>_*]:ease-in-out'>
 				{skyTransition((style, item) => {
 					switch (item) {
 						case 'light':
 							return (
 								<animated.div style={{ ...style, zIndex: -1, position: 'relative' }}>
-									<div
-										id='gradient'
-										style={{
-											position: 'absolute',
-											height: '100vh',
-											width: '100vw',
-											top: '0',
-											left: '0',
-											background: 'linear-gradient(to bottom, #5594bc, transparent)',
-										}}
-									/>
+									<div id='gradient' style={GRADIENT_STYLE} />
 									<ProgressiveImage
 										src='/image/sky.webp'
 										placeholder='/image/sky.min.webp'
 										alt='sky'
-										style={{
-											position: 'absolute',
-											width: 'max(100vw, 200vh)',
-											top: '0',
-											left: '0',
-											opacity: 0.5,
-											mixBlendMode: 'color-dodge',
-											maskImage: 'linear-gradient(to bottom, black, transparent 20%)',
-											WebkitMaskImage: 'linear-gradient(to bottom, black, transparent 20%)',
-										}}
+										style={LIGHT_SKY_STYLE}
 									/>
 								</animated.div>
 							)
@@ -95,34 +66,13 @@ function Illustration() {
 										src='/image/sky.webp'
 										placeholder='/image/sky.min.webp'
 										alt='sky'
-										style={{
-											position: 'absolute',
-											width: 'max(100vw, 200vh)',
-											top: '0',
-											left: '0',
-											zIndex: -1,
-											filter: 'brightness(0.5)',
-											maskImage: 'linear-gradient(to bottom, black 10%, transparent 90%)',
-											WebkitMaskImage: 'linear-gradient(to bottom, black 10%, transparent 90%)',
-										}}
+										style={DARK_SKY_STYLE_1}
 									/>
 									<ProgressiveImage
 										src='/image/sky.webp'
 										placeholder='/image/sky.min.webp'
 										alt='sky'
-										style={{
-											position: 'absolute',
-											width: 'max(100vw, 200vh)',
-											top: 'calc(max(100vw, 200vh) / 7)',
-											left: '0',
-											zIndex: -1,
-											transform: 'scaleY(-1)',
-											filter: 'blur(calc(100vw / 1200)) brightness(0.5)',
-											maskImage:
-												'linear-gradient(to bottom, transparent 20%, #00000059 50%, transparent 70%)',
-											WebkitMaskImage:
-												'linear-gradient(to bottom, transparent 20%, 00000059 50%, transparent 80%)',
-										}}
+										style={DARK_SKY_STYLE_2}
 									/>
 								</animated.div>
 							)
@@ -130,7 +80,7 @@ function Illustration() {
 							return null
 					}
 				})}
-			</Box>
+			</div>
 		</Parallax>
 	)
 }
