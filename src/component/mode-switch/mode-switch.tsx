@@ -3,10 +3,12 @@
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
 import { Button, cn, useMode } from '@renderui/core'
 
-const DEFAULT_ICON_CLASSNAME = 'absolute opacity-100 transition-[opacity] duration-slow'
+const DEFAULT_ICON_CLASSNAME = 'absolute transition-[opacity] duration-slow'
 
 const ModeSwitch = () => {
-	const { resolvedMode: mode, setMode } = useMode()
+	const { mode, setMode } = useMode()
+
+	console.log(mode)
 
 	const handleModeToggle = () => {
 		if (mode === 'light') return setMode('dark')
@@ -16,25 +18,25 @@ const ModeSwitch = () => {
 	return (
 		<Button
 			variant='plain'
-			className='gap-2 rounded-full py-1 px-4 data-[focus-visible=true]:ring-offset-[0px]'
+			className='gap-2 rounded-full py-1 px-4 font-semibold data-[focus-visible=true]:ring-offset-[0px]'
 			onPress={handleModeToggle}
 		>
-			Theme
+			theme
 			<div className='size-[24px] relative flex items-center justify-center'>
 				<SunIcon
 					suppressHydrationWarning
 					className={cn(
 						DEFAULT_ICON_CLASSNAME,
-						'text-white',
-						mode === 'light' ? 'opacity-0' : undefined,
+						'text-white opacity-100',
+						mode === 'dark' ? 'opacity-100' : 'opacity-0',
 					)}
 				/>
 				<MoonIcon
 					suppressHydrationWarning
 					className={cn(
 						DEFAULT_ICON_CLASSNAME,
-						'text-black',
-						mode === 'dark' ? 'opacity-0' : undefined,
+						'text-black opacity-100',
+						mode === 'light' ? 'opacity-100' : 'opacity-0',
 					)}
 				/>
 			</div>
