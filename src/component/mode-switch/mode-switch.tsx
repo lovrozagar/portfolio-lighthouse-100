@@ -18,10 +18,9 @@ const ModeSwitch = () => {
 	return (
 		<Button
 			variant='plain'
-			className='gap-2 rounded-full py-1 px-4 font-semibold data-[focus-visible=true]:ring-offset-[0px]'
+			className='gap-2 rounded-full py-1 px-1 font-semibold [&]:data-[focus-visible=true]:ring-offset-[0px]'
 			onPress={handleModeToggle}
 		>
-			theme
 			<div className='size-[24px] relative flex items-center justify-center'>
 				<SunIcon
 					suppressHydrationWarning
