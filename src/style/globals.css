@@ -22,13 +22,31 @@
 		--duration-medium: 300ms;
 		--duration-medium-slow: 350ms;
 		--duration-medium-slower: 400ms;
-		--duration-slow: 400ms;
+		--duration-slow: 450ms;
 		--timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-		--top-loader: 230, 230, 230;
 
 		/* light base colors */
 		--background: 255, 255, 255;
 		--foreground: 0, 0, 0;
+		--mode-50: 20, 20, 20;
+		--mode-100: 25, 25, 25;
+		--mode-150: 38, 38, 38;
+		--mode-200: 51, 51, 51;
+		--mode-250: 64, 64, 64;
+		--mode-300: 76, 76, 76;
+		--mode-350: 89, 89, 89;
+		--mode-400: 102, 102, 102;
+		--mode-450: 115, 115, 115;
+		--mode-500: 127, 127, 127;
+		--mode-550: 140, 140, 140;
+		--mode-600: 153, 153, 153;
+		--mode-650: 166, 166, 166;
+		--mode-700: 178, 178, 178;
+		--mode-750: 191, 191, 191;
+		--mode-800: 204, 204, 204;
+		--mode-850: 217, 217, 217;
+		--mode-900: 230, 230, 230;
+		--mode-950: 245, 245, 245;
 		--mode: 255, 255, 255;
 		--mode-foreground: 0, 0, 0;
 		--mode-contrast: 10, 10, 10;
@@ -54,6 +72,25 @@
 		/* dark base colors */
 		--background: 10, 10, 10;
 		--foreground: 255, 255, 255;
+		--mode-50: 240, 240, 240;
+		--mode-100: 230, 230, 230;
+		--mode-150: 220, 220, 220;
+		--mode-200: 204, 204, 204;
+		--mode-250: 190, 190, 190;
+		--mode-300: 178, 178, 178;
+		--mode-350: 165, 165, 165;
+		--mode-400: 153, 153, 153;
+		--mode-450: 140, 140, 140;
+		--mode-500: 127, 127, 127;
+		--mode-550: 115, 115, 115;
+		--mode-600: 102, 102, 102;
+		--mode-650: 89, 89, 89;
+		--mode-700: 76, 76, 76;
+		--mode-750: 64, 64, 64;
+		--mode-800: 51, 51, 51;
+		--mode-850: 38, 38, 38;
+		--mode-900: 25, 25, 25;
+		--mode-950: 15, 15, 15;
 		--mode: 10, 10, 10;
 		--mode-foreground: 255, 255, 255;
 		--mode-contrast: 255, 255, 255;
@@ -97,12 +134,20 @@
 	html[data-theme="dark"] > body {
 		background-color: rgb(10, 10, 10);
 		color: rgb(255, 255, 255);
-		background-image: linear-gradient(
-				to bottom,
-				rgba(0, 0, 0, 0) 30%,
-				rgba(0, 0, 0, 0.45) 50%,
-				rgba(0, 0, 0, 0.85) 100%
-			), url("../../public/image/sky.webp");
+		background-image: linear-gradient(to top, #000000, #101010);
+	}
+
+	body > .stars {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		background: url("../../public/image/stars.avif") repeat top center;
 	}
 
 	html[data-animation="disabled"] * {
