@@ -5,6 +5,7 @@ import { ModeProvider } from '@renderui/core'
 
 import { SEO } from '@/component/seo'
 import { INTER } from '@/font'
+import { LazySearchCommand } from '@/module/search-command'
 import type { ReactNode } from 'react'
 
 export const dynamic = 'force-static'
@@ -19,12 +20,13 @@ function RootLayout(props: RootLayoutProps) {
 	return (
 		<html lang='en' className={INTER.className} suppressHydrationWarning>
 			<head>
-				<link rel='preload' href='../../public/image/sky.webp' as='image' />
-				<link rel='preload' href='../../public/image/sky.min.webp' as='image' />
+				<link rel='preload' href='../../public/image/stars.avif' as='image' />
 
 				<SEO />
 			</head>
 			<body className='overflow-x-hidden'>
+				<div className='stars' />
+
 				<ModeProvider
 					enableSystem
 					disableTransitionOnChange
@@ -32,6 +34,7 @@ function RootLayout(props: RootLayoutProps) {
 					storageKey='theme'
 				>
 					<Navbar />
+					<LazySearchCommand />
 					{children}
 				</ModeProvider>
 			</body>
