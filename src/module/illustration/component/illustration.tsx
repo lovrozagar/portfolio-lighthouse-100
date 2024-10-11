@@ -17,10 +17,10 @@ import { Parallax } from 'react-scroll-parallax'
 function Illustration() {
 	const skyTransRef = useSpringRef()
 
-	const { resolvedMode } = useMode()
+	const { mode } = useMode()
 	const mobile = useMobileMode()
 
-	const skyTransition = useTransition(resolvedMode, {
+	const skyTransition = useTransition(mode, {
 		ref: skyTransRef,
 		initial: null,
 		keys: null,
@@ -30,21 +30,14 @@ function Illustration() {
 		config: TRANSITION_CONFIG,
 	})
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
 	useEffect(() => {
 		skyTransRef.start()
-	}, [skyTransRef])
-
-	useEffect(() => {
-		document.body.style.transition = 'background-color ease 0.5s, color ease 0.5s'
-
-		return () => {
-			document.body.style.transition = ''
-		}
-	}, [])
+	}, [mode, skyTransRef.start])
 
 	return (
 		<Parallax speed={-20} startScroll={0} disabled={mobile}>
-			<div className='relative w-[100vw] h-[100vh] pointer-events-none [&_>_*]:transition-[background-color] [&_>_*]:duration-500 [&_>_*]:ease-in-out'>
+			<div className='relative w-[100vw] h-[100vh] pointer-events-none [&_>_*]:transition-[background-color] [&_>_*]:duration-1000 [&_>_*]:ease-in-out'>
 				{skyTransition((style, item) => {
 					switch (item) {
 						case 'light':

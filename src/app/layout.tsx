@@ -1,11 +1,14 @@
 import '@/style/globals.css'
 
-import { Head } from '@/component/head'
 import { Navbar } from '@/module/navbar'
 import { ModeProvider } from '@renderui/core'
 
+import { SEO } from '@/component/seo'
 import { INTER } from '@/font'
-import { type ReactNode, Suspense } from 'react'
+import { LazySearchCommand } from '@/module/search-command'
+import type { ReactNode } from 'react'
+
+export const dynamic = 'force-static'
 
 type RootLayoutProps = {
 	children: ReactNode
@@ -16,13 +19,23 @@ function RootLayout(props: RootLayoutProps) {
 
 	return (
 		<html lang='en' className={INTER.className} suppressHydrationWarning>
-			<Head />
+			<head>
+				<link rel='preload' href='../../public/image/stars.avif' as='image' />
+
+				<SEO />
+			</head>
 			<body className='overflow-x-hidden'>
-				<ModeProvider enableSystem>
-					<Suspense>
-						<Navbar />
-						{children}
-					</Suspense>
+				<div className='stars' />
+
+				<ModeProvider
+					enableSystem
+					disableTransitionOnChange
+					defaultTheme='light'
+					storageKey='theme'
+				>
+					<Navbar />
+					<LazySearchCommand />
+					{children}
 				</ModeProvider>
 			</body>
 		</html>

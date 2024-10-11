@@ -26,7 +26,25 @@ const config: Config = {
 				'background': 'rgba(var(--background))',
 				'foreground': 'rgba(var(--foreground))',
 				'ring-color': 'rgba(var(--ring-color))',
-				'separator': 'rgba(var(--separator))',
+				'mode-50': 'rgba(var(--mode-50))',
+				'mode-100': 'rgba(var(--mode-100))',
+				'mode-150': 'rgba(var(--mode-150))',
+				'mode-200': 'rgba(var(--mode-200))',
+				'mode-250': 'rgba(var(--mode-250))',
+				'mode-300': 'rgba(var(--mode-300))',
+				'mode-350': 'rgba(var(--mode-350))',
+				'mode-400': 'rgba(var(--mode-400))',
+				'mode-450': 'rgba(var(--mode-450))',
+				'mode-500': 'rgba(var(--mode-500))',
+				'mode-550': 'rgba(var(--mode-550))',
+				'mode-600': 'rgba(var(--mode-600))',
+				'mode-650': 'rgba(var(--mode-650))',
+				'mode-700': 'rgba(var(--mode-700))',
+				'mode-750': 'rgba(var(--mode-750))',
+				'mode-800': 'rgba(var(--mode-800))',
+				'mode-850': 'rgba(var(--mode-850))',
+				'mode-900': 'rgba(var(--mode-900))',
+				'mode-950': 'rgba(var(--mode-950))',
 				'mode': {
 					DEFAULT: 'rgba(var(--mode))',
 					foreground: 'rgba(var(--mode-foreground))',
@@ -63,42 +81,10 @@ const config: Config = {
 					DEFAULT: 'rgba(var(--success))',
 					foreground: 'rgba(var(--success-foreground))',
 				},
-				'warning': {
-					DEFAULT: 'rgba(var(--warning))',
-					foreground: 'rgba(var(--warning-foreground))',
-				},
-				'info': {
-					DEFAULT: 'rgba(var(--info))',
-					foreground: 'rgba(var(--info-foreground))',
-				},
-				'help': {
-					DEFAULT: 'rgba(var(--help))',
-					foreground: 'rgba(var(--help-foreground))',
-				},
-				'brand': {
-					DEFAULT: 'rgba(var(--brand))',
-					foreground: 'rgba(var(--brand-foreground))',
-				},
 				'muted': {
 					DEFAULT: 'rgba(var(--muted))',
 					foreground: 'rgba(var(--muted-foreground))',
 				},
-				'accent': {
-					DEFAULT: 'rgba(var(--accent))',
-					high: 'rgba(var(--accent-high))',
-					foreground: 'rgba(var(--accent-foreground))',
-				},
-				'popover': {
-					DEFAULT: 'rgba(var(--popover))',
-					foreground: 'rgba(var(--popover-foreground))',
-				},
-				'card': {
-					DEFAULT: 'rgba(var(--card))',
-					foreground: 'rgba(var(--card-foreground))',
-				},
-				'mode-accent-high': 'rgba(var(--mode-accent-high))',
-				'mode-contrast-accent-high': 'rgba(var(--mode-contrast-accent-high))',
-				'skeleton': 'rgba(var(--skeleton))',
 			},
 			borderRadius: {
 				'largest': 'calc(var(--radius) * 1.8)',
@@ -297,15 +283,6 @@ const config: Config = {
 					'0%': { opacity: '1' },
 					'100%': { opacity: '0' },
 				},
-				'ripple-animation': {
-					'0%': {
-						transform: 'scale(0)',
-					},
-					'100%': {
-						transform: 'scale(1)',
-						opacity: '0',
-					},
-				},
 				'infinite-progress': {
 					'0%': {
 						width: '33%',
@@ -395,7 +372,6 @@ const config: Config = {
 					'overlay-fade-out var(--animation-out-duration) var(--animation-out-timing-function)',
 				'slide': 'slide var(--animation-in-duration) var(--animation-in-timing-function) infinite',
 				'infinite-progress': 'infinite-progress 1.25s linear infinite',
-				'ripple-animation': 'ripple-animation 0.5s linear forwards',
 				'blink': 'blink 1s both infinite',
 			},
 		},

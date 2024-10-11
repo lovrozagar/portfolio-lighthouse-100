@@ -1,7 +1,7 @@
-const Head = () => {
+const SEO = () => {
 	return (
-		<head>
-			<title>Lovro Žagar - Senior Software Engineer | Next.js, React, TypeScript Expert</title>
+		<>
+			<title>Lovro Žagar</title>
 			<meta
 				name='description'
 				content='Lovro Žagar is a Senior Software Engineer with deep expertise in Next.js, React, and TypeScript. Discover scalable web applications and innovative solutions crafted with precision and performance in mind.'
@@ -18,12 +18,12 @@ const Head = () => {
 				content='Explore the portfolio of Lovro Žagar, a Senior Software Engineer specializing in Next.js, React, and TypeScript. Passionate about building high-performance, scalable web applications.'
 			/>
 			<meta property='og:image' content='/path/to/your-image.jpg' />
-			<meta property='og:url' content='https://www.your-portfolio-url.com' />
+			<meta property='og:url' content='https://www.lovrozagar.com' />
 			<meta name='twitter:card' content='summary_large_image' />
-			<link rel='canonical' href='https://www.your-portfolio-url.com' />
+			<link rel='canonical' href='https://www.lovrozagar.com' />
 			<link rel='icon' href='/favicon.ico' />
-		</head>
+		</>
 	)
 }
 
-export { Head }
+export { SEO }

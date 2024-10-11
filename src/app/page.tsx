@@ -1,15 +1,16 @@
 'use client'
 
-import { Illustration } from '@/module/illustration'
-import { ParallaxProvider } from 'react-scroll-parallax'
+import { Header } from '@/component/header'
+import { Terminal } from '@/component/terminal'
 
 const Page = () => {
 	return (
-		<ParallaxProvider>
-			<div className='overflow-hidden'>
-				<Illustration />
-			</div>
-		</ParallaxProvider>
+		<main className='pt-[200px]'>
+			<Header />
+			<section className='flex justify-center mt-4'>
+				<Terminal />
+			</section>
+		</main>
 	)
 }
 

@@ -1,200 +1,59 @@
-// 'use client'
-
-import { Container } from '@renderui/core'
-import Link from 'next/link'
-
-// import { useLandscapeMode, useMobileMode } from '@/component/responsive/responsive'
-// import { NavbarItem } from '@/module/navbar/component/navbar-item'
-// import { modes } from '@/module/navbar/constant/modes'
-// import { useNavbar } from '@/module/navbar/hook/use-navbar'
-// import type { ChildrenProps } from '@/type'
-// import { Button, IconButton, Stack, Tooltip, useColorScheme } from '@mui/joy'
-// import { usePathname } from 'next/navigation'
-// import {
-// 	BsFilePerson,
-// 	BsFilePersonFill,
-// 	BsHouse,
-// 	BsHouseFill,
-// 	BsJournalBookmark,
-// 	BsJournalBookmarkFill,
-// 	BsMoon,
-// 	BsSun,
-// } from 'react-icons/bs'
-// import { MdOutlineAutoMode } from 'react-icons/md'
-
-// function Navbar(props: ChildrenProps) {
-// 	const { children } = props
-
-// 	const pathname = usePathname()
-
-// 	const { mode, setMode } = useColorScheme()
-
-// 	const bottom = useMobileMode()
-// 	const landscape = useLandscapeMode()
-
-// 	const horizontal = !landscape && !bottom
-
-// 	const { navigationRef, hidden } = useNavbar()
-
-// 	return (
-// 		<>
-// 			<Stack
-// 				ref={navigationRef}
-// 				direction={landscape ? 'column' : 'row'}
-// 				sx={(theme) => ({
-// 					position: 'fixed',
-// 					...(bottom
-// 						? {
-// 								bottom: 0,
-// 								borderTop: `1px solid ${theme.palette.divider}`,
-// 							}
-// 						: {
-// 								top: 0,
-// 							}),
-// 					left: 0,
-// 					gap: 4,
-// 					display: hidden ? 'none' : 'flex',
-// 					alignItems: 'center',
-// 					backgroundColor: `color-mix(in srgb, ${theme.palette.background.body}, transparent 50%)`,
-// 					backdropFilter: 'blur(10px)',
-// 					webkitBackdropFilter: 'blur(10px)',
-// 					zIndex: 1000,
-// 					...(landscape
-// 						? {
-// 								paddingY: '1.5rem',
-// 								height: '100vh',
-// 								width: 'fit-content',
-// 								borderRight: `1px solid ${theme.palette.divider}`,
-// 							}
-// 						: {
-// 								padding: bottom ? '.5rem' : '.5rem 2rem',
-// 								width: '100vw',
-// 								height: 'fit-content',
-// 								borderBottom: bottom ? undefined : `1px solid ${theme.palette.divider}`,
-// 							}),
-// 				})}
-// 			>
-// 				<Stack
-// 					flex={1}
-// 					justifyContent={bottom ? 'space-evenly' : 'flex-start'}
-// 					direction={landscape ? 'column' : 'row'}
-// 					gap={1}
-// 				>
-// 					<NavbarItem
-// 						icon={<BsHouse />}
-// 						selectedIcon={<BsHouseFill />}
-// 						text='Home'
-// 						layout={horizontal ? 'horizontal' : 'vertical'}
-// 						href='/'
-// 						selected={pathname === '/'}
-// 					/>
-// 					<NavbarItem
-// 						icon={<BsJournalBookmark />}
-// 						selectedIcon={<BsJournalBookmarkFill />}
-// 						text='Projects'
-// 						layout={horizontal ? 'horizontal' : 'vertical'}
-// 						href='/projects'
-// 						selected={pathname.startsWith('/projects')}
-// 					/>
-// 					<NavbarItem
-// 						icon={<BsFilePerson />}
-// 						selectedIcon={<BsFilePersonFill />}
-// 						text='Resume'
-// 						layout={horizontal ? 'horizontal' : 'vertical'}
-// 						href='/resume'
-// 						selected={pathname === '/resume'}
-// 					/>
-// 				</Stack>
-// 				{horizontal ? (
-// 					<Button
-// 						variant='plain'
-// 						color='neutral'
-// 						size='lg'
-// 						sx={{
-// 							minHeight: 'fit-content',
-// 							borderRadius: '100vmax',
-// 							padding: '.6rem 1rem',
-// 							transition: 'all 0.2s',
-// 							fontSize: 'var(--joy-fontSize-sm)',
-// 						}}
-// 						onClick={() => {
-// 							if (mode) setMode(modes[(modes.indexOf(mode) + 1) % modes.length])
-// 						}}
-// 						startDecorator={mode === 'light' ? <BsSun /> : <BsMoon />}
-// 					>
-// 						{`${mode === 'system' ? 'System' : mode === 'light' ? 'Light' : 'Dark'} theme`}
-// 					</Button>
-// 				) : (
-// 					<Tooltip
-// 						variant='soft'
-// 						placement='right'
-// 						title={`${mode === 'system' ? 'System' : mode === 'light' ? 'Light' : 'Dark'} theme`}
-// 					>
-// 						<IconButton
-// 							variant='plain'
-// 							color='neutral'
-// 							size='lg'
-// 							sx={{
-// 								transition: 'all 0.2s',
-// 								display: bottom ? 'none' : undefined,
-// 								borderRadius: '100vmax',
-// 								padding: 2,
-// 							}}
-// 							onClick={() => {
-// 								if (mode) setMode(modes[(modes.indexOf(mode) + 1) % modes.length])
-// 							}}
-// 						>
-// 							{mode === 'system' ? (
-// 								<MdOutlineAutoMode />
-// 							) : mode === 'light' ? (
-// 								<BsSun />
-// 							) : (
-// 								<BsMoon />
-// 							)}
-// 						</IconButton>
-// 					</Tooltip>
-// 				)}
-// 			</Stack>
-// 			{children}
-// 		</>
-// 	)
-// }
-
-// export { Navbar }
+import { ModeSwitch } from '@/component/mode-switch/mode-switch'
+import { NavbarItem } from '@/module/navbar/component/navbar-item'
+import {
+	Crosshair2Icon,
+	FileTextIcon,
+	GitHubLogoIcon,
+	HomeIcon,
+	PersonIcon,
+} from '@radix-ui/react-icons'
+import { Button, Container } from '@renderui/core'
 
 function Navbar() {
 	return (
-		<Container className='border-b border-mode-accent'>
-			<nav className='h-[50px] backdrop-blur-[10px] flex items-center w-full'>
-				<ul className='flex gap-x-8 items-center w-full'>
-					<li>
-						<Link
-							href='/'
-							className='px-4 py-1.5 hover:bg-mode-contrast hover:text-mode rounded-full transition-colors duration-fast'
+		<div className='absolute z-50 top-0 left-0 w-full border-b border-mode-accent h-[50px] backdrop-blur dark:supports-[backdrop-filter]:bg-background/50 supports-[backdrop-filter]:bg-background/90'>
+			<Container className='h-full'>
+				<nav className='h-full flex items-center w-full'>
+					<ul className='flex gap-x-2 items-center w-full'>
+						<NavbarItem
+							href='https://github.com/lovrozagar'
+							target='_blank'
+							referrerPolicy='no-referrer'
+							className='text-mode-contrast mr-2'
 						>
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/'
-							className='px-4 py-1.5 hover:bg-mode-contrast hover:text-mode rounded-full transition-colors duration-fast'
-						>
-							Home
-						</Link>
-					</li>
-					<li>
-						<Link
-							href='/'
-							className='px-4 py-1.5 hover:bg-mode-contrast hover:text-mode rounded-full transition-colors duration-fast'
-						>
-							Home
-						</Link>
-					</li>
-					<li className='ml-auto'>afeea</li>
-				</ul>
-			</nav>
-		</Container>
+							<GitHubLogoIcon />
+							lovrozagar
+						</NavbarItem>
+						<NavbarItem href='/'>
+							<FileTextIcon />
+							experience
+						</NavbarItem>
+						<NavbarItem href='/'>
+							<Crosshair2Icon />
+							projects
+						</NavbarItem>
+						<NavbarItem href='/'>
+							<PersonIcon />
+							resume
+						</NavbarItem>
+						<li className='ml-auto flex items-center'>
+							<Button
+								color='mode-accent'
+								className='h-[24px] w-[180px] text-neutral-400 bg-mode-accent/50 text-[11px] justify-between px-3 py-0.5 [&]:data-[focus-visible=true]:ring-offset-[0px]'
+							>
+								<span className='relative top-px'>Search...</span>
+								<span className='flex items-center justify-center text-[8px] font-normal bg-mode-contrast/10 py-[1px] px-1 rounded-sm'>
+									⌘ K
+								</span>
+							</Button>
+						</li>
+						<li className='flex items-center'>
+							<ModeSwitch />
+						</li>
+					</ul>
+				</nav>
+			</Container>
+		</div>
 	)
 }
 
