@@ -1,3 +1,4 @@
+import { TypeWriter } from '@/component/type-writer'
 import { ToggleGroup, ToggleGroupItem } from '@renderui/core'
 import { useState } from 'react'
 
@@ -6,15 +7,18 @@ type CareerItem = 'experience' | 'education'
 const Career = () => {
 	const [careerItem, setCareerItem] = useState<CareerItem>('experience')
 
-	const handleCareerItemChange = () => {
-		if (careerItem === 'experience') return setCareerItem('education')
-		if (careerItem === 'education') return setCareerItem('experience')
+	const handleCareerItemChange = (value: unknown) => {
+		if (value === 'experience' || value === 'education') {
+			setCareerItem(value)
+		}
 	}
 
 	return (
 		<>
 			<p>
-				<span className='text-[#3990FF]'>root@lovrozagar:~$</span> lovrozagar.exe --experience
+				<span className='text-[#3990FF]'>root@lovrozagar:~$</span>
+				<span className='inline-block ml-3'>lovrozagar.exe --</span>
+				<TypeWriter>{careerItem}</TypeWriter>
 			</p>
 			<ToggleGroup
 				value={careerItem}

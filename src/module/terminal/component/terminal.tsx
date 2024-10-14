@@ -2,11 +2,11 @@ import { FIRA_CODE } from '@/font'
 import { ActionTooltip } from '@/module/terminal/component/action-tooltip'
 import { Career } from '@/module/terminal/component/career'
 import { ChevronDownIcon, Cross2Icon, MinusIcon, PlusIcon, SquareIcon } from '@radix-ui/react-icons'
-import { Separator, ToggleGroup, ToggleGroupItem, cx } from '@renderui/core'
+import { Separator, cx } from '@renderui/core'
 
 const Terminal = () => {
 	return (
-		<article className='rounded overflow-hidden max-w-[1100px] flex-1 border border-[#25252D]'>
+		<article className='rounded overflow-hidden max-w-[1350px] flex-1 border border-[#25252D]'>
 			<div className='bg-[#14141A] h-[40px] pl-4 flex items-end overflow-hidden'>
 				<div
 					className={cx(
@@ -16,27 +16,27 @@ const Terminal = () => {
 					)}
 				>
 					$_ bash in lovrozagar
-					<ActionTooltip type='tab-close'>
+					<ActionTooltip type='tab-close' ariaLabel='Close tab'>
 						<Cross2Icon />
 					</ActionTooltip>
 				</div>
 				<div className='pl-1 mb-1 flex'>
-					<ActionTooltip type='tab-new'>
+					<ActionTooltip type='tab-new' ariaLabel='New tab'>
 						<PlusIcon />
 					</ActionTooltip>
 					<Separator orientation='vertical' className='bg-mode-750 h-[28px]' />
-					<ActionTooltip type='tab-more'>
+					<ActionTooltip type='tab-more' ariaLabel='Tab options'>
 						<ChevronDownIcon />
 					</ActionTooltip>
 				</div>
 				<div className='ml-auto flex'>
-					<ActionTooltip type='window-move'>
+					<ActionTooltip type='window-move' ariaLabel='Minimize window'>
 						<MinusIcon className='relative top-px' />
 					</ActionTooltip>
-					<ActionTooltip type='window-move'>
+					<ActionTooltip type='window-move' ariaLabel='Fullscreen window'>
 						<SquareIcon className='size-3' />
 					</ActionTooltip>
-					<ActionTooltip type='window-close'>
+					<ActionTooltip type='window-close' ariaLabel='Close window'>
 						<Cross2Icon />
 					</ActionTooltip>
 				</div>
