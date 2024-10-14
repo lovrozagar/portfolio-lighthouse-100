@@ -134,11 +134,6 @@ const config: Config = {
 			},
 
 			keyframes: {
-				'blink': {
-					'0%': { opacity: '0.2' },
-					'20%': { opacity: '1' },
-					'100% ': { opacity: '0.2' },
-				},
 				'accordion-down': {
 					'0%': { height: '0' },
 					'100%': { height: 'var(--radix-accordion-content-height)' },
@@ -304,6 +299,19 @@ const config: Config = {
 						transform: 'translateX(100%)',
 					},
 				},
+				//
+				'blink': {
+					'0%': { opacity: '0' },
+					'20%': { opacity: '1' },
+					'100% ': { opacity: '0' },
+				},
+				'circular-motion': {
+					'0%': { backgroundPosition: '0px 0px' },
+					'25%': { backgroundPosition: '10px -10px' },
+					'50%': { backgroundPosition: '0px -10px' },
+					'75%': { backgroundPosition: '-10px -10px' },
+					'100%': { backgroundPosition: '0px 0px' },
+				},
 			},
 			animation: {
 				'accordion-down':
@@ -372,7 +380,7 @@ const config: Config = {
 					'overlay-fade-out var(--animation-out-duration) var(--animation-out-timing-function)',
 				'slide': 'slide var(--animation-in-duration) var(--animation-in-timing-function) infinite',
 				'infinite-progress': 'infinite-progress 1.25s linear infinite',
-				'blink': 'blink 1s both infinite',
+				'circular-motion': 'circular-motion 30s ease-in-out infinite',
 			},
 		},
 	},

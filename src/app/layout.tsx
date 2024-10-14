@@ -7,6 +7,7 @@ import { SEO } from '@/component/seo'
 import { INTER } from '@/font'
 import { LazySearchCommand } from '@/module/search-command'
 import type { ReactNode } from 'react'
+import { SkyStars } from '@/component/sky-stars'
 
 export const dynamic = 'force-static'
 
@@ -25,7 +26,7 @@ function RootLayout(props: RootLayoutProps) {
 				<SEO />
 			</head>
 			<body className='overflow-x-hidden'>
-				<div className='stars' />
+				<SkyStars />
 
 				<ModeProvider
 					enableSystem
