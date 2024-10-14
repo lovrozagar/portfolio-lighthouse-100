@@ -1,17 +1,12 @@
 import { ModeSwitch } from '@/component/mode-switch/mode-switch'
 import { NavbarItem } from '@/module/navbar/component/navbar-item'
-import {
-	Crosshair2Icon,
-	FileTextIcon,
-	GitHubLogoIcon,
-	HomeIcon,
-	PersonIcon,
-} from '@radix-ui/react-icons'
-import { Button, Container } from '@renderui/core'
+import { SearchTrigger } from '@/module/navbar/component/search-trigger'
+import { Crosshair2Icon, FileTextIcon, GitHubLogoIcon, PersonIcon } from '@radix-ui/react-icons'
+import { Container } from '@renderui/core'
 
 function Navbar() {
 	return (
-		<div className='absolute z-50 top-0 left-0 w-full border-b border-mode-accent h-[50px] backdrop-blur dark:supports-[backdrop-filter]:bg-background/50 supports-[backdrop-filter]:bg-background/90'>
+		<div className='absolute z-50 top-0 left-0 w-full border-b border-mode-accent h-[56px] backdrop-blur dark:supports-[backdrop-filter]:bg-background/20 supports-[backdrop-filter]:bg-background/90 shadow'>
 			<Container className='h-full'>
 				<nav className='h-full flex items-center w-full'>
 					<ul className='flex gap-x-2 items-center w-full'>
@@ -26,7 +21,7 @@ function Navbar() {
 						</NavbarItem>
 						<NavbarItem href='/'>
 							<FileTextIcon />
-							experience
+							career
 						</NavbarItem>
 						<NavbarItem href='/'>
 							<Crosshair2Icon />
@@ -37,15 +32,7 @@ function Navbar() {
 							resume
 						</NavbarItem>
 						<li className='ml-auto flex items-center'>
-							<Button
-								color='mode-accent'
-								className='h-[24px] w-[180px] text-neutral-400 bg-mode-accent/50 text-[11px] justify-between px-3 py-0.5 [&]:data-[focus-visible=true]:ring-offset-[0px]'
-							>
-								<span className='relative top-px'>Search...</span>
-								<span className='flex items-center justify-center text-[8px] font-normal bg-mode-contrast/10 py-[1px] px-1 rounded-sm'>
-									⌘ K
-								</span>
-							</Button>
+							<SearchTrigger />
 						</li>
 						<li className='flex items-center'>
 							<ModeSwitch />

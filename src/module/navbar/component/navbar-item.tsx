@@ -15,12 +15,12 @@ const NavbarItem = (props: NavbarItemProps) => {
 				asChild
 				variant='plain'
 				className={cx(
-					'rounded-full py-1 px-4 text-neutral-400 font-semibold transition-colors data-[hover=true]:text-mode-contrast data-[focus-visible=true]:ring-offset-[0px]',
+					'rounded-full py-1 px-4 text-mode-400 font-semibold transition-colors data-[hover=true]:text-mode-contrast data-[focus-visible=true]:ring-offset-[0px]',
 					className,
 				)}
 			>
 				{({ Ripple }) => (
-					<Link {...restProps}>
+					<Link {...restProps} type={undefined}>
 						{children}
 						<Ripple />
 					</Link>
