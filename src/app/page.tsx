@@ -13,7 +13,7 @@ const Page = () => {
 				<Header />
 				<div className='grid grid-cols-[auto_1fr] gap-x-8'>
 					<div className='relative'>
-						<div className='text-blue-200 font-bold bg-mode size-[44px] rounded-full border-2 border-primary aspect-square ring-offset-0 flex items-center justify-center shadow-[0px_0px_40px_5px_rgba(57,144,255,0.4)]'>
+						<div className='text-blue-200 bg-primary/[15%] font-bold size-[44px] rounded-full border-2 border-primary aspect-square ring-offset-0 flex items-center justify-center shadow-[0px_0px_40px_5px_rgba(57,144,255,0.4)]'>
 							<PersonIcon />
 							<div className='top-[44px] absolute block h-[calc(100%-44px)] w-[2px] bg-primary' />
 						</div>
