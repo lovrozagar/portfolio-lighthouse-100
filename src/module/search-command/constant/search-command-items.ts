@@ -1,4 +1,10 @@
-import { BackpackIcon, Crosshair2Icon, FileTextIcon } from '@radix-ui/react-icons'
+import {
+	BackpackIcon,
+	Crosshair2Icon,
+	FileTextIcon,
+	GitHubLogoIcon,
+	LinkedInLogoIcon,
+} from '@radix-ui/react-icons'
 
 const CAREER_ITEMS = [
 	{
@@ -22,7 +28,12 @@ const CONTACT_ITEMS = [
 	{
 		value: 'github',
 		label: 'GitHub',
-		Icon: FileTextIcon,
+		Icon: GitHubLogoIcon,
+	},
+	{
+		value: 'linkedIn',
+		label: 'LinkedIn',
+		Icon: LinkedInLogoIcon,
 	},
 ] as const
 
