@@ -1,6 +1,7 @@
 import { FIRA_CODE } from '@/font'
 import { ActionTooltip } from '@/module/terminal/component/action-tooltip'
 import { Career } from '@/module/terminal/component/career'
+import { getProfileLoadTime } from '@/module/terminal/util/getProfileLoadTime'
 import { ChevronDownIcon, Cross2Icon, MinusIcon, PlusIcon, SquareIcon } from '@radix-ui/react-icons'
 import { Separator, cx } from '@renderui/core'
 
@@ -41,9 +42,11 @@ const Terminal = () => {
 					</ActionTooltip>
 				</div>
 			</div>
-			<div className={cx('bg-[#202028] p-4', FIRA_CODE.className)}>
-				<p>Bash 3.4.1</p>
-				<p>Loading personal and system profiles took 157ms.</p>
+			<div className='bg-[#202028] p-4'>
+				<div className={FIRA_CODE.className}>
+					<p>Bash 3.4.1</p>
+					<p>{`Loading personal and system profiles took ${getProfileLoadTime()}ms.`}</p>
+				</div>
 				<Career />
 			</div>
 		</article>
