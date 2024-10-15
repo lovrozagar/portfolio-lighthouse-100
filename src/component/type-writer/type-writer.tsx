@@ -14,7 +14,7 @@ const TypeWriter = (props: TypeWriterProps) => {
 	useEffect(() => {
 		const typing = currentText !== children
 		if (cursorRef.current) {
-			cursorRef.current.style.animation = typing ? 'none' : 'blink 1s infinite'
+			cursorRef.current.style.animation = typing ? 'none' : 'blink 2s infinite'
 		}
 	}, [currentText, children])
 
