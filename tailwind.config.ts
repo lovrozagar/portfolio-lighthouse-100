@@ -81,6 +81,10 @@ const config: Config = {
 					DEFAULT: 'rgba(var(--success))',
 					foreground: 'rgba(var(--success-foreground))',
 				},
+				'warning': {
+					DEFAULT: 'rgba(var(--warning))',
+					foreground: 'rgba(var(--warning-foreground))',
+				},
 				'muted': {
 					DEFAULT: 'rgba(var(--muted))',
 					foreground: 'rgba(var(--muted-foreground))',
@@ -311,6 +315,14 @@ const config: Config = {
 					'50%': { backgroundPosition: '0px -10px' },
 					'75%': { backgroundPosition: '-10px -10px' },
 					'100%': { backgroundPosition: '0px 0px' },
+				},
+				'carousel-skill-slide': {
+					'0%': {
+						transform: 'translateX(0)',
+					},
+					'100%': {
+						transform: 'translateX(calc(-75% - 8px))',
+					},
 				},
 			},
 			animation: {
