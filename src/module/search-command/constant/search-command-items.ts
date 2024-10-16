@@ -1,16 +1,16 @@
 import {
 	BackpackIcon,
-	Crosshair2Icon,
-	FileTextIcon,
-	GitHubLogoIcon,
-	LinkedInLogoIcon,
-} from '@radix-ui/react-icons'
+	CrosshairIcon,
+	GithubIcon,
+	LinkedInIcon,
+	TextFileIcon,
+} from '@/component/icon'
 
 const CAREER_ITEMS = [
 	{
 		value: 'experience',
 		label: 'Experience',
-		Icon: FileTextIcon,
+		Icon: TextFileIcon,
 	},
 	{
 		value: 'education',
@@ -20,7 +20,7 @@ const CAREER_ITEMS = [
 	{
 		value: 'projects',
 		label: 'Projects',
-		Icon: Crosshair2Icon,
+		Icon: CrosshairIcon,
 	},
 ] as const
 
@@ -28,12 +28,12 @@ const CONTACT_ITEMS = [
 	{
 		value: 'github',
 		label: 'GitHub',
-		Icon: GitHubLogoIcon,
+		Icon: GithubIcon,
 	},
 	{
 		value: 'linkedIn',
 		label: 'LinkedIn',
-		Icon: LinkedInLogoIcon,
+		Icon: LinkedInIcon,
 	},
 ] as const
 

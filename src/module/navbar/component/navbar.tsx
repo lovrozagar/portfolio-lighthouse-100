@@ -1,7 +1,7 @@
+import { CrosshairIcon, GithubIcon, PersonIcon, TextFileIcon } from '@/component/icon'
 import { ModeSwitch } from '@/component/mode-switch/mode-switch'
 import { NavbarItem } from '@/module/navbar/component/navbar-item'
 import { SearchTrigger } from '@/module/navbar/component/search-trigger'
-import { Crosshair2Icon, FileTextIcon, GitHubLogoIcon, PersonIcon } from '@radix-ui/react-icons'
 import { Container } from '@renderui/core'
 
 function Navbar() {
@@ -16,15 +16,15 @@ function Navbar() {
 							referrerPolicy='no-referrer'
 							className='text-mode-contrast mr-2'
 						>
-							<GitHubLogoIcon />
+							<GithubIcon />
 							lovrozagar
 						</NavbarItem>
 						<NavbarItem href='/'>
-							<FileTextIcon />
+							<TextFileIcon />
 							career
 						</NavbarItem>
 						<NavbarItem href='/'>
-							<Crosshair2Icon />
+							<CrosshairIcon />
 							projects
 						</NavbarItem>
 						<NavbarItem href='/'>
