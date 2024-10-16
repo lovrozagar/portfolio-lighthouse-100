@@ -28,6 +28,17 @@ const EDUCATION_CAREER_ITEMS: CareerItem[] = [
 	{
 		organizationName: 'School of Electrical Engineering',
 		organizationHref: undefined,
+		startDate: 'Sep 2016',
+		endDate: 'May 2019',
+		role: 'CCNA R&S Certification',
+		commitmentType: 'Full-time',
+		location: 'Zagreb, Croatia',
+		skills: ['Cisco', 'Networking'],
+		description: ['Learned about networking functions, structure, and architecture.'],
+	},
+	{
+		organizationName: 'School of Electrical Engineering',
+		organizationHref: undefined,
 		startDate: 'Sep 2014',
 		endDate: 'May 2019',
 		role: 'Computer Technician',

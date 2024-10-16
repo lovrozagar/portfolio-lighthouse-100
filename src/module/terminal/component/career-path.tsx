@@ -29,18 +29,15 @@ const CarrerPath = (props: CareerPathProps) => {
 					<div className='grid gap-y-1'>
 						<div className='flex items-center gap-x-3'>
 							{experience.organizationHref ? (
-								<Link
-									href={experience.organizationHref}
-									className={linkClasses({ className: 'text-[#EBEBEF]' })}
-								>
-									{experience.organizationName}
+								<Link href={experience.organizationHref} className={linkClasses()}>
+									<h3 className='text-[#EBEBEF]'>{experience.organizationName}</h3>
 								</Link>
 							) : (
-								<span className='text-[#EBEBEF]'>{experience.organizationName}</span>
+								<h3 className='text-[#EBEBEF]'>{experience.organizationName}</h3>
 							)}
-							<span className='text-sm text-[#B9B9C6]'>
+							<time className='text-sm text-[#B9B9C6]'>
 								{experience.startDate} - {experience.endDate}
-							</span>
+							</time>
 							<span className='text-sm text-[#8F8FA3]'>(1 month)</span>
 						</div>
 						<div className='flex items-center gap-x-3'>
