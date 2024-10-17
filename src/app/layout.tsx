@@ -4,10 +4,10 @@ import { Navbar } from '@/module/navbar'
 import { ModeProvider } from '@renderui/core'
 
 import { SEO } from '@/component/seo'
+import { SkyStars } from '@/component/sky-stars'
 import { INTER } from '@/font'
 import { LazySearchCommand } from '@/module/search-command'
 import type { ReactNode } from 'react'
-import { SkyStars } from '@/component/sky-stars'
 
 export const dynamic = 'force-static'
 
@@ -26,17 +26,18 @@ function RootLayout(props: RootLayoutProps) {
 				<SEO />
 			</head>
 			<body className='overflow-x-hidden'>
-				<SkyStars />
-
 				<ModeProvider
 					enableSystem
 					disableTransitionOnChange
 					defaultTheme='light'
 					storageKey='theme'
 				>
+					<SkyStars />
 					<Navbar />
-					<LazySearchCommand />
+
 					{children}
+
+					<LazySearchCommand />
 				</ModeProvider>
 			</body>
 		</html>

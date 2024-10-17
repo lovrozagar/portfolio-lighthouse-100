@@ -1,8 +1,8 @@
+import type { CareerItem } from '@/module/career/type/carrer.item.types'
 import { linkClasses } from '@renderui/core'
 import Image from 'next/image'
 import Link from 'next/link'
 import src from '../../../../public/image/recommend.jpg'
-import type { CareerItem } from '@/module/career/type/carrer.item.types'
 
 type CareerPathProps = {
 	careerItems: CareerItem[]
