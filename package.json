@@ -1,4 +1,9 @@
 {
+	"author": {
+		"email": "lovro.zagar5@gmail.com",
+		"name": "Lovro Žagar",
+		"url": "https://github.com/lovrozagar"
+	},
 	"dependencies": {
 		"@renderui/core": "1.9.8",
 		"next": "15.0.0-rc.0",
@@ -12,11 +17,15 @@
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.3",
 		"@commitlint/cli": "^18.6.1",
-		"@commitlint/config-conventional": "^18.6.2",
+		"@commitlint/config-conventional": "^19.5.0",
+		"@commitlint/format": "^19.5.0",
+		"@commitlint/types": "^19.5.0",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"autoprefixer": "^10.4.20",
 		"bun-types": "latest",
 		"commitlint": "^19.4.0",
+		"conventional-changelog-atom": "^5.0.0",
+		"jsonlint": "^1.6.3",
 		"lefthook": "^1.7.18",
 		"npm-check-updates": "^16.14.20",
 		"postcss": "8.4.47",
@@ -25,9 +34,10 @@
 		"typescript": "^5.5.4",
 		"typescript-coverage-report": "^1.0.0"
 	},
+	"keywords": ["portfolio", "dev", "lighthouse", "score"],
 	"name": "next-starter",
 	"packageManager": "bun@1.0.27",
-	"sideEffects": false,
+	"private": false,
 	"scripts": {
 		"build": "next build",
 		"clear": "rm -rf .next .turbo node_modules",
@@ -38,6 +48,7 @@
 		"lint": "bunx @biomejs/biome lint ./src",
 		"lint:check": "bunx @biomejs/biome check ./src",
 		"lint:fix": "bunx @biomejs/biome lint --write ./src",
+		"lint:fix-unsafe": "bunx @biomejs/biome lint --write --unsafe ./src",
 		"lint:format": "bunx @biomejs/biome format ./src",
 		"preinstall": "npx only-allow bun",
 		"setup": "chmod +x .lefthook/commit-msg/commitlint.sh && bun install",
@@ -46,6 +57,7 @@
 		"type:coverage": "typescript-coverage-report",
 		"update:check": "bun x npm-check-updates"
 	},
+	"sideEffects": false,
 	"type": "module",
 	"version": "0.0.1"
 }
