@@ -1,4 +1,4 @@
-import { Svg, type SvgProps } from '@/component/icon/svg'
+import { Svg, type SvgProps } from '@/component/icon/svg.icon.component'
 
 const PersonIcon = (props: SvgProps) => {
 	return (
