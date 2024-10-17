@@ -15,7 +15,7 @@ const NavbarItem = (props: NavbarItemProps) => {
 				asChild
 				variant='plain'
 				className={cx(
-					'rounded-full py-1 px-4 text-mode-400 font-semibold transition-colors data-[hover=true]:text-mode-contrast data-[focus-visible=true]:ring-offset-[0px]',
+					'rounded-full px-4 py-1 font-semibold text-mode-400 transition-colors data-[hover=true]:text-mode-contrast data-[focus-visible=true]:ring-offset-[0px]',
 					className,
 				)}
 			>

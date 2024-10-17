@@ -1,6 +1,9 @@
 'use client'
 
-import { CAREER_ITEMS, CONTACT_ITEMS } from '@/module/search-command/constant/search-command-items'
+import {
+	CAREER_ITEMS,
+	CONTACT_ITEMS,
+} from '@/module/search-command/constant/search-command.item.constants'
 import { useSearchCommandStore } from '@/store/search-command'
 import {
 	CommandDialog,

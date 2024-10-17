@@ -1,26 +1,12 @@
-import type { CareerItem } from '@/module/terminal/type/type'
+import type { CareerItem } from '@/module/career/type/carrer.item.types'
 
-const EXPERIENCE_CARRER_ITEMS: CareerItem[] = [
+const EDUCATION_CAREER_ITEMS: CareerItem[] = [
 	{
-		organizationName: 'recommend.co',
-		organizationHref: 'https://www.recommend.co/',
-		startDate: 'Oct 2024',
-		endDate: 'Present',
-		role: 'Senior Frontend Engineer',
-		commitmentType: 'Full-time',
-		location: 'Zagreb, Croatia',
-		skills: ['TypeScript', 'Next.js', 'React', 'React-Query', 'Zustand', 'GitHub', 'Azure'],
-		description: [
-			'Rewrote the entire front-end of the TalentYou platform using React, Redux, and i18n, greatly improving performance and user experience.',
-			'Containerized the back-end services using Docker and VS Code Dev Containers, reducing the onboarding time for new developers by up to 70%.',
-		],
-	},
-	{
-		organizationName: 'HiveTech Ltd.',
+		organizationName: 'Zagreb University of Applied Sciences',
 		organizationHref: 'https://hivetech.hr/',
-		startDate: 'Mar 2022',
-		endDate: 'Oct 2024',
-		role: 'Frontend Engineer',
+		startDate: 'Oct 2019',
+		endDate: 'May 2021',
+		role: 'Computer Science',
 		commitmentType: 'Full-time',
 		location: 'Zagreb, Croatia',
 		skills: [
@@ -40,13 +26,24 @@ const EXPERIENCE_CARRER_ITEMS: CareerItem[] = [
 		],
 	},
 	{
-		organizationName: 'Freelance',
+		organizationName: 'School of Electrical Engineering',
 		organizationHref: undefined,
-		startDate: 'Feb 2020',
-		endDate: 'Mar 2022',
-		role: 'Frontend Developer',
+		startDate: 'Sep 2016',
+		endDate: 'May 2019',
+		role: 'CCNA R&S Certification',
 		commitmentType: 'Full-time',
-		location: 'Remote',
+		location: 'Zagreb, Croatia',
+		skills: ['Cisco', 'Networking'],
+		description: ['Learned about networking functions, structure, and architecture.'],
+	},
+	{
+		organizationName: 'School of Electrical Engineering',
+		organizationHref: undefined,
+		startDate: 'Sep 2014',
+		endDate: 'May 2019',
+		role: 'Computer Technician',
+		commitmentType: 'Full-time',
+		location: 'Zagreb, Croatia',
 		skills: [
 			'TypeScript',
 			'Next.js',
@@ -65,4 +62,4 @@ const EXPERIENCE_CARRER_ITEMS: CareerItem[] = [
 	},
 ]
 
-export { EXPERIENCE_CARRER_ITEMS }
+export { EDUCATION_CAREER_ITEMS }

@@ -18,11 +18,11 @@ const ActionTooltip = (props: ActionTooltipProps) => {
 				className={cx(
 					type === 'tab-close' ? 'p-1' : undefined,
 					type === 'tab-new' || type === 'tab-more'
-						? 'h-[28px] w-[32px] p-0 bg-[#25252D] before:hidden data-[hover=true]:bg-[#2A2A33]'
+						? 'h-[28px] w-[32px] bg-[#25252D] p-0 before:hidden data-[hover=true]:bg-[#2A2A33]'
 						: undefined,
-					type === 'tab-new' ? 'rounded-l-[4px] rounded-r-none' : undefined,
+					type === 'tab-new' ? 'rounded-r-none rounded-l-[4px]' : undefined,
 					type === 'tab-more' ? 'rounded-r-[4px] rounded-l-none' : undefined,
-					type === 'window-move' || type === 'window-close' ? 'rounded-none h-[40px]' : undefined,
+					type === 'window-move' || type === 'window-close' ? 'h-[40px] rounded-none' : undefined,
 					type === 'window-move' ? 'data-[hover=true]:bg-[#2A2A33]' : undefined,
 					type === 'window-close' ? 'data-[hover=true]:bg-destructive/60' : undefined,
 				)}

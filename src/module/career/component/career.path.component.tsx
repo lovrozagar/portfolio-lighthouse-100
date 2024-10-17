@@ -1,8 +1,8 @@
-import type { CareerItem } from '@/module/terminal/type/type'
 import { linkClasses } from '@renderui/core'
 import Image from 'next/image'
 import Link from 'next/link'
 import src from '../../../../public/image/recommend.jpg'
+import type { CareerItem } from '@/module/career/type/carrer.item.types'
 
 type CareerPathProps = {
 	careerItems: CareerItem[]
@@ -24,7 +24,7 @@ const CarrerPath = (props: CareerPathProps) => {
 							height={46}
 							width={46}
 						/>
-						<span className='w-[1px] flex-1 bg-[#43434d] self-center relative top-2.5' />
+						<span className='relative top-2.5 w-[1px] flex-1 self-center bg-[#43434d]' />
 					</div>
 					<div className='grid gap-y-1'>
 						<div className='flex items-center gap-x-3'>
@@ -35,28 +35,28 @@ const CarrerPath = (props: CareerPathProps) => {
 							) : (
 								<h3 className='text-[#EBEBEF]'>{experience.organizationName}</h3>
 							)}
-							<time className='text-sm text-[#B9B9C6]'>
+							<time className='text-[#B9B9C6] text-sm'>
 								{experience.startDate} - {experience.endDate}
 							</time>
-							<span className='text-sm text-[#8F8FA3]'>(1 month)</span>
+							<span className='text-[#8F8FA3] text-sm'>(1 month)</span>
 						</div>
 						<div className='flex items-center gap-x-3'>
-							<span className='text-sm font-semibold tracking-wide'> {experience.role}</span>
-							<span className='text-sm text-[#B9B9C6]'>{`${experience.commitmentType} - ${experience.location}`}</span>
+							<span className='font-semibold text-sm tracking-wide'> {experience.role}</span>
+							<span className='text-[#B9B9C6] text-sm'>{`${experience.commitmentType} - ${experience.location}`}</span>
 						</div>
-						<ul className='flex flex-wrap gap-x-2 gap-y-2 mt-2'>
+						<ul className='mt-2 flex flex-wrap gap-x-2 gap-y-2'>
 							{experience.skills.map((skill, index) => (
 								<li
 									key={index}
-									className='text-xs px-2.5 py-[5px] border border-[#43434d] rounded-full tracking-wide flex items-center justify-center'
+									className='flex items-center justify-center rounded-full border border-[#43434d] px-2.5 py-[5px] text-xs tracking-wide'
 								>
 									{skill}
 								</li>
 							))}
 						</ul>
-						<ul className='flex flex-wrap gap-y-2 mt-2'>
+						<ul className='mt-2 flex flex-wrap gap-y-2'>
 							{experience.description.map((point, index) => (
-								<li key={index} className='text-sm text-[#B9B9C6]'>
+								<li key={index} className='text-[#B9B9C6] text-sm'>
 									- {point}
 								</li>
 							))}

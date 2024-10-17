@@ -16,7 +16,7 @@ const PROJECT_ITEMS: ProjectItem[] = [
 			'Transpiling',
 			'Bundle Size Optimization',
 			'Design System',
-			'Tailwind',
+			'Tailwind CSS',
 			'Radix',
 		],
 		websiteHref: 'renderui.com',

@@ -1,20 +1,20 @@
 import { CrosshairIcon, GithubIcon, PersonIcon, TextFileIcon } from '@/component/icon'
-import { ModeSwitch } from '@/component/mode-switch/mode-switch'
-import { NavbarItem } from '@/module/navbar/component/navbar-item'
-import { SearchTrigger } from '@/module/navbar/component/search-trigger'
+import { NavbarItem } from '@/module/navbar/component/navbar.item.component'
+import { ModeSwitch } from '@/module/navbar/component/navbar.mode-switch.component'
+import { SearchTrigger } from '@/module/navbar/component/search-trigger.component'
 import { Container } from '@renderui/core'
 
 function Navbar() {
 	return (
-		<div className='absolute z-50 top-0 left-0 w-full border-b border-mode-accent h-[56px] backdrop-blur dark:supports-[backdrop-filter]:bg-background/20 supports-[backdrop-filter]:bg-background/90 shadow'>
+		<div className='absolute top-0 left-0 z-50 h-[56px] w-full border-mode-accent border-b shadow backdrop-blur supports-[backdrop-filter]:bg-background/90 dark:supports-[backdrop-filter]:bg-background/20'>
 			<Container className='h-full'>
-				<nav className='h-full flex items-center w-full'>
-					<ul className='flex gap-x-2 items-center w-full'>
+				<nav className='flex h-full w-full items-center'>
+					<ul className='flex w-full items-center gap-x-2'>
 						<NavbarItem
 							href='https://github.com/lovrozagar'
 							target='_blank'
 							referrerPolicy='no-referrer'
-							className='text-mode-contrast mr-2'
+							className='mr-2 text-mode-contrast'
 						>
 							<GithubIcon />
 							lovrozagar

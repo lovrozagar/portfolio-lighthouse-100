@@ -2,16 +2,15 @@
 
 import { TypeWriter } from '@/component/type-writer'
 import { FIRA_CODE } from '@/font'
-import { CarrerPath } from '@/module/terminal/component/career-path'
-import { EDUCATION_CAREER_ITEMS } from '@/module/terminal/constant/education'
-import { EXPERIENCE_CARRER_ITEMS } from '@/module/terminal/constant/experience'
+import { CarrerPath } from '@/module/career/component/career.path.component'
+import { EDUCATION_CAREER_ITEMS } from '@/module/career/constant/career.education.constants'
+import { EXPERIENCE_CARRER_ITEMS } from '@/module/career/constant/career.experience.constants'
+import type { CareerItemType } from '@/module/career/type/carrer.item.types'
 import { ToggleGroup, ToggleGroupItem } from '@renderui/core'
 import { useState } from 'react'
 
-type CareerItem = 'experience' | 'education'
-
-const Career = () => {
-	const [careerItem, setCareerItem] = useState<CareerItem>('experience')
+const CareerTerminalContent = () => {
+	const [careerItem, setCareerItem] = useState<CareerItemType>('experience')
 
 	const handleCareerItemChange = (value: unknown) => {
 		if (value === 'experience' || value === 'education') {
@@ -24,7 +23,7 @@ const Career = () => {
 			<div className={FIRA_CODE.className}>
 				<p>
 					<span className='text-[#3990FF]'>root@lovrozagar:~$</span>
-					<span className='inline-block ml-3'>lovrozagar.exe --</span>
+					<span className='ml-3 inline-block'>lovrozagar.exe --</span>
 					<TypeWriter>{careerItem}</TypeWriter>
 				</p>
 				<ToggleGroup
@@ -35,7 +34,7 @@ const Career = () => {
 					onValueChange={handleCareerItemChange}
 				>
 					<ToggleGroupItem
-						className='text-base rounded py-1.5 px-4'
+						className='rounded px-4 py-1.5 text-base'
 						value='experience'
 						id='experience'
 						rippleProps={{ opacity: 0.2 }}
@@ -43,7 +42,7 @@ const Career = () => {
 						experience
 					</ToggleGroupItem>
 					<ToggleGroupItem
-						className='text-base rounded py-1.5 px-4'
+						className='rounded px-4 py-1.5 text-base'
 						value='education'
 						id='education'
 						rippleProps={{ opacity: 0.2 }}
@@ -63,4 +62,4 @@ const Career = () => {
 	)
 }
 
-export { Career }
+export { CareerTerminalContent }

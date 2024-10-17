@@ -1,19 +1,19 @@
 import { FIRA_CODE } from '@/font'
-import { ActionTooltip } from '@/module/terminal/component/action-tooltip'
-import { Career } from '@/module/terminal/component/career'
-import { getProfileLoadTime } from '@/module/terminal/util/getProfileLoadTime'
+import { ActionTooltip } from '@/module/career/component/career.action-tooltip.component'
+import { CareerTerminalContent } from '@/module/career/component/career.terminal-content.component'
+import { getProfileLoadTime } from '@/module/career/util/career.get-profile-load-time.util'
 import { ChevronDownIcon, Cross2Icon, MinusIcon, PlusIcon, SquareIcon } from '@radix-ui/react-icons'
 import { Separator, cx } from '@renderui/core'
 
-const Terminal = () => {
+const CareerSection = () => {
 	return (
-		<article className='rounded overflow-hidden max-w-[1350px] flex-1 border border-[#25252D]'>
-			<div className='bg-[#14141A] h-[40px] pl-4 flex items-end overflow-hidden'>
+		<article className='max-w-[1350px] flex-1 overflow-hidden rounded border border-[#25252D]'>
+			<div className='flex h-[40px] items-end overflow-hidden bg-[#14141A] pl-4'>
 				<div
 					className={cx(
-						'relative h-[32px] bg-[#25252D] flex items-center justify-between font-medium text-sm w-[250px] pl-2 pr-1 rounded-t',
-						'before:z-[1] before:content-[""] before:absolute before:left-[-6px] before:top-1/2 before:h-1/2 before:w-[6px] before:rounded-br-[6px] before:bg-transparent before:shadow-[0_6px_0_0_#25252D]',
-						'after:z-[1] after:content-[""] after:absolute after:right-[-6px] after:top-1/2 after:h-1/2 after:w-[6px] after:rounded-bl-[6px] after:bg-transparent after:shadow-[0_6px_0_0_#25252D]',
+						'relative flex h-[32px] w-[250px] items-center justify-between rounded-t bg-[#25252D] pr-1 pl-2 font-medium text-sm',
+						'before:absolute before:top-1/2 before:left-[-6px] before:z-[1] before:h-1/2 before:w-[6px] before:rounded-br-[6px] before:bg-transparent before:shadow-[0_6px_0_0_#25252D] before:content-[""]',
+						'after:absolute after:top-1/2 after:right-[-6px] after:z-[1] after:h-1/2 after:w-[6px] after:rounded-bl-[6px] after:bg-transparent after:shadow-[0_6px_0_0_#25252D] after:content-[""]',
 					)}
 				>
 					$_ bash in lovrozagar
@@ -21,11 +21,11 @@ const Terminal = () => {
 						<Cross2Icon />
 					</ActionTooltip>
 				</div>
-				<div className='pl-1 mb-1 flex'>
+				<div className='mb-1 flex pl-1'>
 					<ActionTooltip type='tab-new' ariaLabel='New tab'>
 						<PlusIcon />
 					</ActionTooltip>
-					<Separator orientation='vertical' className='bg-mode-750 h-[28px]' />
+					<Separator orientation='vertical' className='h-[28px] bg-mode-750' />
 					<ActionTooltip type='tab-more' ariaLabel='Tab options'>
 						<ChevronDownIcon />
 					</ActionTooltip>
@@ -47,10 +47,10 @@ const Terminal = () => {
 					<p>Bash 3.4.1</p>
 					<p>{`Loading personal and system profiles took ${getProfileLoadTime()}ms.`}</p>
 				</div>
-				<Career />
+				<CareerTerminalContent />
 			</div>
 		</article>
 	)
 }
 
-export { Terminal }
+export { CareerSection }

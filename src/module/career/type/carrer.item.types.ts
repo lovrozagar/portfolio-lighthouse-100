@@ -1,3 +1,5 @@
+type CareerItemType = 'experience' | 'education'
+
 type CareerItem = {
 	organizationName: string
 	organizationHref: string | undefined
@@ -10,4 +12,4 @@ type CareerItem = {
 	description: string[]
 }
 
-export type { CareerItem }
+export type { CareerItemType, CareerItem }
