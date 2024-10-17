@@ -15,7 +15,7 @@ const ProjectCardAnchor = (props: ProjectCardAnchorProps) => {
 			asChild
 			variant='solid'
 			color='mode-contrast-accent'
-			className='py-2 px-2.5 text-xs gap-2 font-semibold'
+			className='gap-2 px-2.5 py-2 font-semibold text-xs'
 		>
 			<Link href={href} type={undefined}>
 				{children}

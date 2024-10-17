@@ -1,1 +1,1 @@
-export { LazySearchCommand } from '@/module/search-command/component/lazy-search-command'
+export { LazySearchCommand } from '@/module/search-command/component/search-command.lazy.component'

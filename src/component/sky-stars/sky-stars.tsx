@@ -1,6 +1,6 @@
 const SkyStars = () => {
 	return (
-		<div className='stars absolute inset-0 block w-full h-full z-[-1] animate-circular-motion' />
+		<div className='stars absolute inset-0 z-[-1] hidden h-full w-full animate-circular-motion dark:block' />
 	)
 }
 
