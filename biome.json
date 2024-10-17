@@ -1,33 +1,41 @@
 {
 	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"complexity": {
-				"noStaticOnlyClass": "off",
-				"noForEach": "off"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "off"
-			},
-			"a11y": {
-				"useKeyWithClickEvents": "off"
-			},
-			"recommended": true
-		}
-	},
 	"formatter": {
 		"lineWidth": 100
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "single",
 			"jsxQuoteStyle": "single",
 			"quoteProperties": "preserve",
+			"quoteStyle": "single",
 			"semicolons": "asNeeded"
 		}
+	},
+	"json": {
+		"linter": {
+			"enabled": true
+		}
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"a11y": {
+				"useKeyWithClickEvents": "off"
+			},
+			"complexity": {
+				"noForEach": "off",
+				"noStaticOnlyClass": "off"
+			},
+			"nursery": {
+				"useSortedClasses": "warn"
+			},
+			"recommended": true,
+			"suspicious": {
+				"noArrayIndexKey": "off"
+			}
+		}
+	},
+	"organizeImports": {
+		"enabled": true
 	}
 }
