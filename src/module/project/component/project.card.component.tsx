@@ -2,7 +2,7 @@ import { GithubIcon, GlobeIcon, NpmIcon } from '@/component/icon'
 import { ProjectCardAnchor } from '@/module/project/component/project.card-anchor.component'
 import { ProjectCardBadge } from '@/module/project/component/project.card-badge.component'
 import type { ProjectItem } from '@/module/project/type/project.item.types'
-import { linkClasses } from '@renderui/core'
+import { linkClasses } from '@renderui/qa'
 import Link from 'next/link'
 
 type ProjectCardProps = {
@@ -26,7 +26,7 @@ const ProjectCard = (props: ProjectCardProps) => {
 			<div className='flex flex-1 flex-col p-4'>
 				<Link
 					href={item.websiteHref ?? item.packageHref ?? item.sourceCodeHref}
-					className={linkClasses({ underline: 'none', className: 'grid w-fit' })}
+					// className={linkClasses({ underline: 'none', className: 'grid w-fit' })}
 				>
 					<h3 className='w-fit font-semibold text-[#EBEBEF] text-base hover:underline'>
 						{item.name}

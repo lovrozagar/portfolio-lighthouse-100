@@ -6,7 +6,7 @@ import { CarrerPath } from '@/module/career/component/career.path.component'
 import { EDUCATION_CAREER_ITEMS } from '@/module/career/constant/career.education.constants'
 import { EXPERIENCE_CARRER_ITEMS } from '@/module/career/constant/career.experience.constants'
 import type { CareerItemType } from '@/module/career/type/carrer.item.types'
-import { ToggleGroup, ToggleGroupItem } from '@renderui/core'
+import { ToggleGroupItem, ToggleGroupRoot } from '@renderui/toggle-group'
 import { useState } from 'react'
 
 const CareerTerminalContent = () => {
@@ -26,7 +26,7 @@ const CareerTerminalContent = () => {
 					<span className='ml-3 inline-block'>lovrozagar.exe --</span>
 					<TypeWriter>{careerItem}</TypeWriter>
 				</p>
-				<ToggleGroup
+				<ToggleGroupRoot
 					value={careerItem}
 					type='single'
 					color='mode-contrast'
@@ -49,7 +49,7 @@ const CareerTerminalContent = () => {
 					>
 						education
 					</ToggleGroupItem>
-				</ToggleGroup>
+				</ToggleGroupRoot>
 			</div>
 			<article className='pb-4'>
 				{careerItem === 'experience' ? (

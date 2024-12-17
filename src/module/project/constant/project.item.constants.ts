@@ -2,7 +2,7 @@ import type { ProjectItem } from '@/module/project/type/project.item.types'
 
 const PROJECT_ITEMS: ProjectItem[] = [
 	{
-		name: 'renderui/core',
+		name: 'renderui/qa',
 		startDate: 'Nov 2023',
 		endDate: 'Present',
 		description:
@@ -21,7 +21,7 @@ const PROJECT_ITEMS: ProjectItem[] = [
 		],
 		websiteHref: 'renderui.com',
 		sourceCodeHref: 'https://github.com/lovrozagar/renderui-core',
-		packageHref: 'https://www.npmjs.com/package/@renderui/core',
+		packageHref: 'https://www.npmjs.com/package/@renderui/qa',
 		videoSrc: 'https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4',
 	},
 	{
@@ -43,7 +43,7 @@ const PROJECT_ITEMS: ProjectItem[] = [
 		],
 		websiteHref: 'renderui.com',
 		sourceCodeHref: 'https://github.com/lovrozagar/renderui-core',
-		packageHref: 'https://www.npmjs.com/package/@renderui/core',
+		packageHref: 'https://www.npmjs.com/package/@renderui/qa',
 		videoSrc: 'https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4',
 	},
 ]

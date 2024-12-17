@@ -1,4 +1,4 @@
-import { Button } from '@renderui/core'
+import { Button } from '@renderui/button'
 import Link, { type LinkProps } from 'next/link'
 
 const SkillLinkCarouselItem = (props: LinkProps) => {

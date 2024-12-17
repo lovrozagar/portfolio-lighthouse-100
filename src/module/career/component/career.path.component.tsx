@@ -1,5 +1,5 @@
 import type { CareerItem } from '@/module/career/type/carrer.item.types'
-import { linkClasses } from '@renderui/core'
+import { linkClasses } from '@renderui/qa'
 import Image from 'next/image'
 import Link from 'next/link'
 import src from '../../../../public/image/recommend.jpg'
@@ -29,7 +29,9 @@ const CarrerPath = (props: CareerPathProps) => {
 					<div className='grid gap-y-1'>
 						<div className='flex items-center gap-x-3'>
 							{experience.organizationHref ? (
-								<Link href={experience.organizationHref} className={linkClasses()}>
+								<Link href={experience.organizationHref}
+								//  className={linkClasses()}
+								 >
 									<h3 className='text-[#EBEBEF]'>{experience.organizationName}</h3>
 								</Link>
 							) : (

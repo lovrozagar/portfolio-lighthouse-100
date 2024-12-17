@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
 	darkMode: ['selector', '[data-theme="dark"]'],
-	content: ['./src/**/*.{js,ts,jsx,tsx}', './node_modules/@renderui/core/dist/**/*.{js,ts}'],
+	content: ['./src/**/*.{js,ts,jsx,tsx}', './node_modules/@renderui/**/*.{js,ts}'],
 	theme: {
 		extend: {
 			spacing: {

@@ -1,4 +1,5 @@
-import { Button, Ripple } from '@renderui/core'
+import { Button } from '@renderui/button'
+import { Ripple } from '@renderui/ripple'
 import Link from 'next/link'
 import type { ReactNode } from 'react'
 

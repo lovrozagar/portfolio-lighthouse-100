@@ -1,6 +1,8 @@
 'use client'
 
-import { Button, cx } from '@renderui/core'
+import { Button } from '@renderui/button'
+import { Ripple } from '@renderui/ripple'
+import { cx } from '@renderui/utils'
 import Link from 'next/link'
 import type { ComponentPropsWithRef } from 'react'
 
@@ -19,12 +21,10 @@ const NavbarItem = (props: NavbarItemProps) => {
 					className,
 				)}
 			>
-				{({ Ripple }) => (
-					<Link {...restProps} type={undefined}>
-						{children}
-						<Ripple />
-					</Link>
-				)}
+				<Link {...restProps} type={undefined}>
+					{children}
+					<Ripple />
+				</Link>
 			</Button>
 		</li>
 	)

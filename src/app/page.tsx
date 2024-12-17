@@ -1,15 +1,17 @@
+import { Header } from '@/component/header'
 import { ArrowRightIcon, CheckmarkIcon, CrosshairIcon, PersonIcon } from '@/component/icon'
 import { SectionTitle } from '@/component/section-title/section-title'
 import { CareerSection } from '@/module/career'
 import { ProjectSection } from '@/module/project'
 import { SkillSection } from '@/module/skill'
-import { Button, Container, Separator } from '@renderui/core'
+import { Button } from '@renderui/button'
+import { Container } from '@renderui/container'
 
-const Page = () => {
+export default function Page() {
 	return (
 		<Container className='pb-[200px]'>
 			<main className='pt-[100px]'>
-				{/* <Header /> */}
+				<Header />
 				<div className='grid grid-cols-[auto_1fr] gap-x-8'>
 					<div className='relative'>
 						<div className='flex aspect-square size-[48px] items-center justify-center rounded-full border-2 border-primary bg-primary/[15%] font-bold text-blue-200 shadow-[0px_0px_40px_5px_rgba(57,144,255,0.4)] ring-offset-0'>
@@ -40,7 +42,7 @@ const Page = () => {
 							<span className='font-extrabold text-secondary'>Projects</span>
 						</SectionTitle>
 						<ProjectSection />
-						<Separator className='mt-8 mb-7 border-mode-800' />
+						{/* <Separator className='mt-8 mb-7 border-mode-800' /> */}
 						<div className='flex items-start justify-between'>
 							<div>
 								<h2 className='flex gap-x-4 text-4xl'>
@@ -85,5 +87,3 @@ const Page = () => {
 		</Container>
 	)
 }
-
-export default Page

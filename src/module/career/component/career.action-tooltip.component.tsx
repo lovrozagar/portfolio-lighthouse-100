@@ -1,4 +1,5 @@
-import { Tooltip, TooltipContent, TooltipTrigger, cx } from '@renderui/core'
+import { TooltipContent, TooltipRoot, TooltipTrigger } from '@renderui/tooltip'
+import { cx } from '@renderui/utils'
 import type { ReactNode } from 'react'
 
 type ActionTooltipProps = {
@@ -11,7 +12,7 @@ const ActionTooltip = (props: ActionTooltipProps) => {
 	const { children, ariaLabel, type } = props
 
 	return (
-		<Tooltip delayDuration={0} skipDelayDuration={0}>
+		<TooltipRoot delayDuration={0} skipDelayDuration={0}>
 			<TooltipTrigger
 				hasRipple
 				aria-label={ariaLabel}
@@ -32,7 +33,7 @@ const ActionTooltip = (props: ActionTooltipProps) => {
 			<TooltipContent className='font-normal' animationDuration={150}>
 				You know I can't do that
 			</TooltipContent>
-		</Tooltip>
+		</TooltipRoot>
 	)
 }
 

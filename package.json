@@ -5,11 +5,18 @@
 		"url": "https://github.com/lovrozagar"
 	},
 	"dependencies": {
-		"@renderui/core": "1.9.8",
+		"@renderui/button": "^1.0.5",
+		"@renderui/container": "^1.0.2",
+		"@renderui/hooks": "^1.0.4",
+		"@renderui/ripple": "^1.0.3",
+		"@renderui/sub-layer": "^1.0.3",
+		"@renderui/toggle-group": "^1.0.2",
+		"@renderui/tooltip": "1.0.1",
+		"@renderui/utils": "^0.3.2",
+		"framer-motion": "^11.11.9",
 		"next": "15.0.0-rc.0",
 		"react": "19.0.0-rc-a960b92c-20240819",
 		"react-dom": "19.0.0-rc-a960b92c-20240819",
-		"react-scroll-parallax": "^3.4.5",
 		"types-react": "^19.0.0-rc.1",
 		"types-react-dom": "^19.0.0-rc.1",
 		"zustand": "^5.0.0-rc.2"
@@ -20,6 +27,7 @@
 		"@commitlint/config-conventional": "^19.5.0",
 		"@commitlint/format": "^19.5.0",
 		"@commitlint/types": "^19.5.0",
+		"@next/bundle-analyzer": "^14.2.15",
 		"@total-typescript/ts-reset": "^0.5.1",
 		"autoprefixer": "^10.4.20",
 		"bun-types": "latest",
@@ -41,7 +49,8 @@
 	"private": false,
 	"scripts": {
 		"build": "next build",
-		"clear": "rm -rf .next .turbo node_modules",
+		"bundlesize:check": "bunx bundlewatch --config bundlewatch.config.json",
+		"clear": "rm -rf .next .turbo node_modules bun.lockb",
 		"clear:soft": "rm -rf .next .turbo",
 		"commitlint:init": "chmod +x .lefthook/commit-msg/commitlint.sh",
 		"dev": "next dev --turbo",
@@ -56,8 +65,7 @@
 		"start": "next start",
 		"type:check": "tsc --noEmit",
 		"type:coverage": "typescript-coverage-report",
-		"update:check": "bun x npm-check-updates",
-		"bundlesize:check": "bunx bundlewatch --config bundlewatch.config.json"
+		"update:check": "bun x npm-check-updates"
 	},
 	"sideEffects": false,
 	"type": "module",

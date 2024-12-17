@@ -1,11 +1,9 @@
 import '@/style/globals.css'
 
-import { Navbar } from '@/module/navbar'
-import { ModeProvider } from '@renderui/core'
-
 import { SEO } from '@/component/seo'
 import { SkyStars } from '@/component/sky-stars'
 import { INTER } from '@/font'
+import { Navbar } from '@/module/navbar'
 import { LazySearchCommand } from '@/module/search-command'
 import type { ReactNode } from 'react'
 
@@ -26,19 +24,19 @@ function RootLayout(props: RootLayoutProps) {
 				<SEO />
 			</head>
 			<body className='overflow-x-hidden'>
-				<ModeProvider
+				{/* <ModeProvider
 					enableSystem
 					disableTransitionOnChange
 					defaultTheme='light'
 					storageKey='theme'
-				>
-					<SkyStars />
-					<Navbar />
+				> */}
+				<SkyStars />
+				<Navbar />
 
-					{children}
+				{children}
 
-					<LazySearchCommand />
-				</ModeProvider>
+				{/* <LazySearchCommand /> */}
+				{/* </ModeProvider> */}
 			</body>
 		</html>
 	)

@@ -13,22 +13,22 @@ import {
 	CommandItem,
 	CommandList,
 	Separator,
-	useEventListener,
-} from '@renderui/core'
+	// useEventListener,
+} from '@renderui/qa'
 
 const SearchCommand = () => {
 	const open = useSearchCommandStore((store) => store.open)
 	const setOpen = useSearchCommandStore((store) => store.setOpen)
 
-	useEventListener({
-		event: 'keydown',
-		handler: (event) => {
-			if ((event.key === 'k' || event.key === 'K') && (event.metaKey || event.ctrlKey)) {
-				event.preventDefault()
-				setOpen(!open)
-			}
-		},
-	})
+	// useEventListener({
+	// 	event: 'keydown',
+	// 	handler: (event) => {
+	// 		if ((event.key === 'k' || event.key === 'K') && (event.metaKey || event.ctrlKey)) {
+	// 			event.preventDefault()
+	// 			setOpen(!open)
+	// 		}
+	// 	},
+	// })
 
 	const handleSelect = (value: unknown) => {
 		switch (value) {
@@ -50,6 +50,7 @@ const SearchCommand = () => {
 
 	return (
 		<CommandDialog
+			color='mode-accent'
 			dialogProps={{ open: open, onOpenChange: setOpen }}
 			onSelect={(value) => handleSelect(value)}
 		>

@@ -2,7 +2,7 @@ import { CrosshairIcon, GithubIcon, PersonIcon, TextFileIcon } from '@/component
 import { NavbarItem } from '@/module/navbar/component/navbar.item.component'
 import { ModeSwitch } from '@/module/navbar/component/navbar.mode-switch.component'
 import { SearchTrigger } from '@/module/navbar/component/search-trigger.component'
-import { Container } from '@renderui/core'
+import { Container } from '@renderui/container'
 
 function Navbar() {
 	return (
